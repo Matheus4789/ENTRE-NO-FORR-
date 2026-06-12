@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FORRÓ SEM PAREDE — Aprenda a Dançar Forró</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    ::selection { background: #000; color: #FF4D00; }
+
+    :root {
+      --orange: #FF4D00;
+      --black: #000000;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--orange);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVIGATION ─────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+    }
+
+    .nav-logo {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18px;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-pill {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--black);
+      border-radius: 9999px;
+      padding: 10px 28px;
+      display: flex;
+      gap: 28px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .nav-pill a {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.2s, background 0.2s;
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+
+    .nav-pill a:hover { background: var(--white); color: var(--black); }
+
+    .nav-social {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .nav-social a {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .nav-social a:hover { opacity: 0.6; }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 88px 32px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-headline {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(40px, 7.5vw, 116px);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-headline span.outline {
+      -webkit-text-stroke: 3px var(--black);
+      color: transparent;
+    }
+
+    .hero-subheadline {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(17px, 2vw, 24px);
+      font-weight: 500;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      text-align: center;
+      max-width: 640px;
+      margin: 16px auto 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-subheadline strong {
+      font-weight: 500;
+      background: var(--black);
+      color: var(--orange);
+      padding: 0 6px;
+    }
+
+    .hero-divider {
+      width: 100%;
+      height: 2px;
+      background: var(--black);
+      margin: 48px 0 0;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 0 0;
+    }
+
+    /* ── ROTATING SCROLL INDICATOR ──────────────────────── */
+    .scroll-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 144px;
+      height: 144px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .scroll-text-ring {
+      width: 144px;
+      height: 144px;
+      animation: spin 12s linear infinite;
+    }
+
+    .scroll-center-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+    }
+
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    /* ── SHAME SECTION ───────────────────────────────────── */
+    .shame-section {
+      background: var(--black);
+      padding: 64px 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .shame-left {
+      border-right: 1px solid rgba(255,255,255,0.15);
+      padding-right: 64px;
+    }
+
+    .shame-tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--orange);
+      border: 2px solid var(--orange);
+      padding: 4px 12px;
+      margin-bottom: 20px;
+    }
+
+    .shame-heading {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(36px, 5vw, 80px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .shame-heading em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .shame-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.7);
+      max-width: 440px;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 2px;
+      height: 480px;
+    }
+
+    .ba-card {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 2px solid rgba(255,255,255,0.1);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .ba-card:hover { border-color: var(--orange); }
+
+    .ba-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .ba-card.before .ba-label { color: rgba(255,255,255,0.4); }
+    .ba-card.after .ba-label { color: var(--orange); }
+
+    .ba-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(24px, 3vw, 40px);
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      line-height: 0.9;
+    }
+
+    .ba-card.before .ba-title { color: rgba(255,255,255,0.3); }
+    .ba-card.after .ba-title { color: var(--white); }
+
+    .ba-emoji {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      font-size: 48px;
+      opacity: 0.15;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .ba-card:hover .ba-emoji { opacity: 0.5; transform: scale(1.1); }
+
+    /* ── MARQUEE ─────────────────────────────────────────── */
+    .marquee-section {
+      background: var(--black);
+      transform: skewY(-2deg);
+      margin: 24px 0;
+      padding: 36px 0;
+      overflow: hidden;
+    }
+
+    .marquee-inner {
+      transform: skewY(2deg);
+    }
+
+    .marquee-row {
+      display: flex;
+      width: max-content;
+      overflow: hidden;
+      margin: 8px 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      animation: marquee-left 18s linear infinite;
+    }
+
+    .marquee-track.reverse {
+      animation: marquee-right 20s linear infinite;
+    }
+
+    .marquee-item {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(48px, 10vw, 140px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding-right: 60px;
+    }
+
+    .marquee-item.orange { color: var(--orange); }
+    .marquee-item.white-fade { color: rgba(255,255,255,0.8); }
+
+    .marquee-sep {
+      color: var(--orange);
+      padding-right: 40px;
+    }
+
+    @keyframes marquee-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes marquee-right {
+      from { transform: translateX(-50%); }
+      to { transform: translateX(0); }
+    }
+
+    /* ── SERVICES / MODULES ──────────────────────────────── */
+    .services-section {
+      background: var(--black);
+      padding: 56px 32px 0;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 28px;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      margin-bottom: 0;
+    }
+
+    .services-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--orange);
+    }
+
+    .services-count {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: center;
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      cursor: pointer;
+      transition: background 0.3s;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-item:hover { background: rgba(255,255,255,0.04); }
+
+    .service-index {
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: -0.02em;
+    }
+
+    .service-content { flex: 1; }
+
+    .service-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(28px, 6vw, 90px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      transition: transform 0.3s;
+      display: block;
+    }
+
+    .service-item:hover .service-title { transform: translateX(16px); }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .service-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+
+    .service-arrow {
+      color: var(--orange);
+      opacity: 0;
+      transform: rotate(0deg);
+      transition: opacity 0.3s, transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .service-item:hover .service-arrow {
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+
+    /* ── EXPERT SECTION ──────────────────────────────────── */
+    .expert-section {
+      background: var(--orange);
+      padding: 64px 32px;
+      border-top: 2px solid var(--black);
+      display: grid;
+      grid-template-columns: 0.85fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .expert-photo-wrap {
+      position: relative;
+    }
+
+    .expert-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 2px solid var(--black);
+      display: block;
+      filter: grayscale(100%) contrast(1.05);
+      transition: filter 0.4s;
+    }
+
+    .expert-photo-wrap:hover .expert-photo { filter: grayscale(0%) contrast(1); }
+
+    .expert-badge {
+      position: absolute;
+      bottom: -16px;
+      left: -16px;
+      background: var(--black);
+      color: var(--orange);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      padding: 10px 18px;
+      border-radius: 9999px;
+    }
+
+    .expert-label {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      border: 2px solid var(--black);
+      padding: 4px 12px;
+      margin-bottom: 28px;
+    }
+
+    .expert-name {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(40px, 6vw, 84px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .expert-handle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      text-decoration: none;
+      background: var(--black);
+      color: var(--orange);
+      padding: 8px 16px;
+      border-radius: 9999px;
+      margin-bottom: 28px;
+      transition: transform 0.2s;
+    }
+
+    .expert-handle:hover { transform: translateX(4px); }
+
+    .expert-bio {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--black);
+      max-width: 520px;
+    }
+
+    .expert-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 2px solid var(--black);
+    }
+
+    .expert-stat-num {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(28px, 3vw, 44px);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--black);
+    }
+
+    .expert-stat-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* ── PROOF STRIP ─────────────────────────────────────── */
+    .proof-strip {
+      background: var(--orange);
+      padding: 56px 32px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .proof-card {
+      border: 2px solid var(--black);
+      padding: 40px 32px;
+      background: var(--orange);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .proof-card:hover { background: var(--black); }
+    .proof-card:hover .proof-number { color: var(--orange); }
+    .proof-card:hover .proof-desc { color: var(--white); }
+
+    .proof-number {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(48px, 7vw, 100px);
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+      text-transform: uppercase;
+      color: var(--black);
+      transition: color 0.2s;
+    }
+
+    .proof-desc {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-top: 16px;
+      transition: color 0.2s;
+      line-height: 1.5;
+    }
+
+    /* ── CTA ─────────────────────────────────────────────── */
+    .cta-section {
+      background: var(--orange);
+      padding: 80px 32px;
+      text-align: center;
+      border-top: 2px solid var(--black);
+    }
+
+    .cta-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+      color: var(--black);
+    }
+
+    .cta-heading {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(56px, 12vw, 180px);
+      line-height: 0.87;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 32px;
+    }
+
+    .cta-heading span {
+      -webkit-text-stroke: 3px var(--black);
+      color: transparent;
+    }
+
+    .cta-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .cta-price-old {
+      font-family: 'Space Mono', monospace;
+      font-size: 20px;
+      font-weight: 700;
+      text-decoration: line-through;
+      color: rgba(0,0,0,0.4);
+      letter-spacing: -0.02em;
+    }
+
+    .cta-price {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(40px, 6vw, 80px);
+      letter-spacing: -0.04em;
+      color: var(--black);
+    }
+
+    .cta-price-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      border: 2px solid var(--black);
+      padding: 4px 10px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(18px, 2.5vw, 28px);
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 9999px;
+      padding: 24px 56px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    .cta-btn svg { transition: transform 0.3s; }
+    .cta-btn:hover svg { transform: translateX(6px); }
+
+    .cta-guarantee {
+      margin-top: 20px;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: rgba(0,0,0,0.5);
+    }
+
+    .cta-deliverables {
+      max-width: 760px;
+      margin: 0 auto 56px;
+      text-align: left;
+    }
+
+    .cta-deliverables-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(22px, 3.2vw, 34px);
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    /* ── DELIVERABLES GRID ──────────────────────────────── */
+    .cta-deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .cta-card {
+      position: relative;
+      background: rgba(0,0,0,0.04);
+      border: 2px solid var(--black);
+      padding: 22px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .cta-card:hover {
+      background: var(--black);
+      transform: translateY(-3px);
+    }
+
+    .cta-card-check {
+      flex-shrink: 0;
+      color: var(--white);
+      background: var(--black);
+      border: 2px solid var(--black);
+      border-radius: 50%;
+      padding: 4px;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .cta-card:hover .cta-card-check {
+      background: var(--orange);
+      color: var(--black);
+    }
+
+    .cta-card-body { flex: 1; }
+
+    .cta-card-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.35;
+      color: var(--black);
+      transition: color 0.25s;
+    }
+
+    .cta-card:hover .cta-card-title { color: var(--white); }
+
+    .cta-card-value {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.55);
+      text-decoration: line-through;
+      transition: color 0.25s;
+    }
+
+    .cta-card:hover .cta-card-value { color: rgba(255,255,255,0.55); }
+
+    .cta-card.featured { border-color: var(--black); background: var(--orange); }
+
+    .cta-card.featured::before {
+      content: "PRINCIPAL";
+      position: absolute;
+      top: -12px;
+      left: 16px;
+      background: var(--black);
+      color: var(--orange);
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      padding: 3px 10px;
+      text-transform: uppercase;
+    }
+
+    /* ── VALUE STACK ────────────────────────────────────── */
+    .cta-value-stack {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: var(--black);
+      padding: 18px 24px;
+      margin-bottom: 40px;
+    }
+
+    .cta-value-stack-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .cta-value-stack-old {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(22px, 3.5vw, 34px);
+      letter-spacing: -0.04em;
+      color: rgba(255,255,255,0.45);
+      text-decoration: line-through;
+    }
+
+    .cta-value-stack-arrow {
+      color: var(--orange);
+      display: flex;
+      align-items: center;
+    }
+
+    .cta-value-stack-now {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(26px, 4.5vw, 44px);
+      letter-spacing: -0.04em;
+      color: var(--orange);
+    }
+
+    .cta-bonuses {
+      background: var(--black);
+      padding: 32px;
+      position: relative;
+      border: 2px solid var(--black);
+    }
+
+    .cta-bonuses::before {
+      content: "BÔNUS EXCLUSIVOS";
+      position: absolute;
+      top: -14px;
+      left: 32px;
+      background: var(--orange);
+      color: var(--black);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      text-transform: uppercase;
+      border: 2px solid var(--black);
+    }
+
+    .cta-bonus-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .cta-bonus-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .cta-bonus-icon {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .cta-bonus-content h4 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 18px;
+      color: var(--white);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-bonus-content p {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--orange);
+      border-top: 2px solid var(--black);
+      padding: 40px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--black);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover { opacity: 0.5; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-pill { display: none; }
+      .shame-section { grid-template-columns: 1fr; }
+      .shame-left { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 48px; }
+      .expert-section { grid-template-columns: 1fr; gap: 48px; }
+      .expert-stats { gap: 24px; }
+      .before-after { height: auto; grid-template-rows: auto auto; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .cta-deliverables-grid { grid-template-columns: 1fr; }
+      .hero-meta { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+      .hero-meta-right { text-align: center; }
+      .scroll-indicator { margin: 0 auto; }
+      .service-item { grid-template-columns: 48px 1fr auto; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="#">
+      <img src="logo_white.png" alt="Entre no Forró" style="height: 48px; display: block;" />
+    </a>
+    <div class="nav-pill">
+      <a href="#problema">O Problema</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#expert">Professor</a>
+      <a href="#prova">Provas</a>
+      <a href="#cta">Entrar</a>
+    </div>
+    <div class="nav-social">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <h1 class="hero-headline">
+      NÃO SEJA O CARA QUE FICA NA <span class="outline">PAREDE</span> ENQUANTO ELA DANÇA COLADA COM OUTRO
+    </h1>
+
+    <p class="hero-subheadline">
+      O curso online que tira você do canto e te coloca dançando forró
+      <strong>colado e com confiança</strong> em 1 semana — sem vergonha, sem travar, no seu ritmo.
+    </p>
+
+  </section>
+
+  <!-- SHAME SECTION -->
+  <section class="shame-section" id="problema">
+    <div class="shame-left">
+      <div class="shame-tag">O Problema</div>
+      <h2 class="shame-heading">
+        Ela dança colada<br/>com <em>outro</em>.<br/>
+        Você<br/>assiste.
+      </h2>
+      <p class="shame-body">
+        Você foi no arraiá, no bar, na festa junina. A música tocou e você ficou parado. Não por falta de vontade — por falta de jeito. Enquanto isso, ela foi embora no braço de um cara que sabia o que estava fazendo.
+        <br/><br/>
+        Isso não precisa acontecer de novo. Nunca mais.
+      </p>
+    </div>
+
+    <div class="before-after">
+      <div class="ba-card before">
+        <span class="ba-emoji">😬</span>
+        <div class="ba-label">Antes</div>
+        <div class="ba-title">Encostado<br/>na parede</div>
+      </div>
+      <div class="ba-card after">
+        <span class="ba-emoji">🔥</span>
+        <div class="ba-label">Depois</div>
+        <div class="ba-title">Conduzindo<br/>com confiança</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-inner">
+      <div class="marquee-row">
+        <div class="marquee-track">
+          <span class="marquee-item orange">FORRÓ</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">CONFIANÇA</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">FORRÓ</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">CONFIANÇA</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">FORRÓ</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">CONFIANÇA</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+        </div>
+        <div class="marquee-track" aria-hidden="true">
+          <span class="marquee-item orange">FORRÓ</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">CONFIANÇA</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">FORRÓ</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">CONFIANÇA</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">FORRÓ</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+          <span class="marquee-item orange">CONFIANÇA</span>
+          <span class="marquee-item orange marquee-sep">•</span>
+        </div>
+      </div>
+      <div class="marquee-row">
+        <div class="marquee-track reverse">
+          <span class="marquee-item white-fade">SEM TRAVAMENTO</span>
+          <span class="marquee-item white-fade marquee-sep" style="color:rgba(255,77,0,0.8)">★</span>
+          <span class="marquee-item white-fade">SEM VERGONHA</span>
+          <span class="marquee-item white-fade marquee-sep" style="color:rgba(255,77,0,0.8)">★</span>
+          <span class="marquee-item white-fade">SEM TRAVAMENTO</span>
+          <span class="marquee-item white-fade marquee-sep" style="color:rgba(255,77,0,0.8)">★</span>
+          <span class="marquee-item white-fade">SEM VERGONHA</span>
+          <span class="marquee-item white-fade marquee-sep" style="color:rgba(255,77,0,0.8)">★</span>
+        </div>
+        <div class="marquee-track reverse" aria-hidden="true">
+          <span class="marquee-item white-fade">SEM TRAVAMENTO</span>
+          <span class="marquee-item white-fade marquee-sep" style="color:rgba(255,77,0,0.8)">★</span>
+          <span class="marquee-item white-fade">SEM VERGONHA</span>
+          <span class="marquee-item white-fade marquee-sep" style="color:rgba(255,77,0,0.8)">★</span>
+          <span class="marquee-item white-fade">SEM TRAVAMENTO</span>
+          <span class="marquee-item white-fade marquee-sep" style="color:rgba(255,77,0,0.8)">★</span>
+          <span class="marquee-item white-fade">SEM VERGONHA</span>
+          <span class="marquee-item white-fade marquee-sep" style="color:rgba(255,77,0,0.8)">★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULES LIST -->
+  <section class="services-section" id="modulos">
+    <div class="services-header">
+      <span class="services-label">O que você aprende</span>
+      <span class="services-count">06 Módulos</span>
+    </div>
+
+    <div class="service-item">
+      <span class="service-index">01</span>
+      <div class="service-content">
+        <span class="service-title">Base do Forró</span>
+        <div class="service-tags">
+          <span class="service-tag">Passinho</span>
+          <span class="service-tag">Postura</span>
+          <span class="service-tag">Ritmo</span>
+        </div>
+      </div>
+      <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="7" y1="17" x2="17" y2="7"/>
+        <polyline points="7 7 17 7 17 17"/>
+      </svg>
+    </div>
+
+    <div class="service-item">
+      <span class="service-index">02</span>
+      <div class="service-content">
+        <span class="service-title">Condução</span>
+        <div class="service-tags">
+          <span class="service-tag">Quadril</span>
+          <span class="service-tag">Abraço</span>
+          <span class="service-tag">Liderança</span>
+        </div>
+      </div>
+      <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="7" y1="17" x2="17" y2="7"/>
+        <polyline points="7 7 17 7 17 17"/>
+      </svg>
+    </div>
+
+    <div class="service-item">
+      <span class="service-index">03</span>
+      <div class="service-content">
+        <span class="service-title">Giros & Viradas</span>
+        <div class="service-tags">
+          <span class="service-tag">Volta Básica</span>
+          <span class="service-tag">Giro Lateral</span>
+          <span class="service-tag">Virada</span>
+        </div>
+      </div>
+      <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="7" y1="17" x2="17" y2="7"/>
+        <polyline points="7 7 17 7 17 17"/>
+      </svg>
+    </div>
+
+    <div class="service-item">
+      <span class="service-index">04</span>
+      <div class="service-content">
+        <span class="service-title">Charme & Chamego</span>
+        <div class="service-tags">
+          <span class="service-tag">Olhar</span>
+          <span class="service-tag">Presença</span>
+          <span class="service-tag">Improviso</span>
+        </div>
+      </div>
+      <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="7" y1="17" x2="17" y2="7"/>
+        <polyline points="7 7 17 7 17 17"/>
+      </svg>
+    </div>
+
+    <div class="service-item">
+      <span class="service-index">05</span>
+      <div class="service-content">
+        <span class="service-title">Convidar a Dançar</span>
+        <div class="service-tags">
+          <span class="service-tag">Abordagem</span>
+          <span class="service-tag">Confiança</span>
+          <span class="service-tag">Social</span>
+        </div>
+      </div>
+      <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="7" y1="17" x2="17" y2="7"/>
+        <polyline points="7 7 17 7 17 17"/>
+      </svg>
+    </div>
+
+    <div class="service-item">
+      <span class="service-index">06</span>
+      <div class="service-content">
+        <span class="service-title">Noite de Festa</span>
+        <div class="service-tags">
+          <span class="service-tag">Repertório</span>
+          <span class="service-tag">Sequências</span>
+          <span class="service-tag">Salão</span>
+        </div>
+      </div>
+      <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="7" y1="17" x2="17" y2="7"/>
+        <polyline points="7 7 17 7 17 17"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- EXPERT SECTION -->
+  <section class="expert-section" id="expert">
+    <div class="expert-photo-wrap">
+      <img class="expert-photo" src="expert.jpg" alt="Téo Albuquerque, professor de forró" />
+      <div class="expert-badge">★ Seu professor</div>
+    </div>
+    <div class="expert-info">
+      <div class="expert-label">Quem vai te ensinar</div>
+      <h2 class="expert-name">Téo<br/>Albuquerque</h2>
+      <a class="expert-handle" href="https://instagram.com/teo.arrastape" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+        </svg>
+        @teo.arrastape
+      </a>
+      <p class="expert-bio">
+        Pé de serra desde os 12 anos, dançarino e professor de forró há mais de uma década.
+        Já tirou mais de mil pessoas travadas da parede e colocou todas no meio do salão —
+        do completo iniciante ao cara que vira atração da festa. O método dele é direto:
+        nada de teoria chata, só o que faz você dançar de verdade.
+      </p>
+      <div class="expert-stats">
+        <div>
+          <div class="expert-stat-num">12+</div>
+          <div class="expert-stat-label">Anos<br/>ensinando</div>
+        </div>
+        <div>
+          <div class="expert-stat-num">1.2k</div>
+          <div class="expert-stat-label">Alunos<br/>formados</div>
+        </div>
+        <div>
+          <div class="expert-stat-num">85k</div>
+          <div class="expert-stat-label">Seguidores<br/>no Instagram</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <section class="proof-strip" id="prova">
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-number">1.200+</div>
+        <div class="proof-desc">Alunos que já<br/>saíram da parede</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">3 Sem.</div>
+        <div class="proof-desc">Para dançar na<br/>próxima festa</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-number">100%</div>
+        <div class="proof-desc">Online · No seu<br/>ritmo · Sem julgamento</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="cta">
+    <div class="cta-eyebrow">Oferta de Lançamento · Vagas Limitadas</div>
+    <h2 class="cta-heading">
+      ENTRE<br/>
+      <span>NO FORRÓ</span>
+    </h2>
+
+    <div class="cta-deliverables">
+      <h3 class="cta-deliverables-title">O que você leva hoje:</h3>
+      <div class="cta-deliverables-grid">
+        <div class="cta-card featured">
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <div class="cta-card-body">
+            <div class="cta-card-title">Curso Completo "Entre no Forró" — 06 módulos práticos</div>
+            <span class="cta-card-value">R$197</span>
+          </div>
+        </div>
+        <div class="cta-card">
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <div class="cta-card-body">
+            <div class="cta-card-title">Acesso Vitalício — assista quando e onde quiser</div>
+            <span class="cta-card-value">R$97</span>
+          </div>
+        </div>
+        <div class="cta-card">
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <div class="cta-card-body">
+            <div class="cta-card-title">Suporte tira-dúvidas direto com o professor</div>
+            <span class="cta-card-value">R$67</span>
+          </div>
+        </div>
+        <div class="cta-card">
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <div class="cta-card-body">
+            <div class="cta-card-title">Atualizações futuras do curso — de graça, pra sempre</div>
+            <span class="cta-card-value">R$47</span>
+          </div>
+        </div>
+        <div class="cta-card">
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <div class="cta-card-body">
+            <div class="cta-card-title">Acesso no celular, tablet e TV</div>
+            <span class="cta-card-value">R$42</span>
+          </div>
+        </div>
+        <div class="cta-card">
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <div class="cta-card-body">
+            <div class="cta-card-title">Certificado de Conclusão</div>
+            <span class="cta-card-value">R$47</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-value-stack">
+        <span class="cta-value-stack-label">Valor total</span>
+        <span class="cta-value-stack-old">R$497</span>
+        <span class="cta-value-stack-arrow">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+        <span class="cta-value-stack-now">Hoje R$39,90</span>
+      </div>
+
+      <div class="cta-bonuses">
+        <div class="cta-bonus-item">
+          <div class="cta-bonus-icon">🎁</div>
+          <div class="cta-bonus-content">
+            <h4>Guia da Abordagem Certa</h4>
+            <p>PDF + Vídeo mostrando como convidar para dançar sem levar fora e com naturalidade.</p>
+          </div>
+        </div>
+        <div class="cta-bonus-item">
+          <div class="cta-bonus-icon">🎧</div>
+          <div class="cta-bonus-content">
+            <h4>Playlist Secreta "Arrasta-pé"</h4>
+            <p>As melhores músicas selecionadas pelo professor para você treinar o ritmo em casa.</p>
+          </div>
+        </div>
+        <div class="cta-bonus-item">
+          <div class="cta-bonus-icon">💬</div>
+          <div class="cta-bonus-content">
+            <h4>Comunidade VIP</h4>
+            <p>Acesso ao grupo exclusivo de alunos para tirar dúvidas e combinar idas a festas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-price-row">
+      <span class="cta-price-old">R$197</span>
+      <span class="cta-price">R$39,90</span>
+      <span class="cta-price-label">Acesso Vitalício</span>
+    </div>
+
+    <a href="#" class="cta-btn">
+      Quero Aprender Forró Agora
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+
+    <div class="cta-guarantee">★ Garantia de 7 dias · Se não gostar, dinheiro de volta ★</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-copy">© 2026 Forró Sem Parede · Todos os direitos reservados</div>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Contato</a>
+      <a href="#">Privacidade</a>
+    </div>
+  </footer>
+
+</body>
+</html>
