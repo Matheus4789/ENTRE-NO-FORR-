@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1799797374736343');
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1799797374736343&ev=PageView&noscript=1" alt="" /></noscript>
+      src="https://www.facebook.com/tr?id=1799797374736343&ev=PageView&noscript=1" alt="" /></noscript>
   <!-- End Meta Pixel Code -->
 
   <!-- Utmify (UTMs) -->
-  <script
-    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-    data-utmify-prevent-xcod-sck
-    data-utmify-prevent-subids
-    data-utmify-ignore-iframe
-    data-utmify-is-cartpanda
-    async
-    defer
-  ></script>
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids
+    data-utmify-ignore-iframe data-utmify-is-cartpanda async defer></script>
 
   <title>FORRÓ SEM PAREDE · Especial São João 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    ::selection { background: #000; color: #FF4D00; }
+    ::selection {
+      background: #000;
+      color: #FF4D00;
+    }
 
     :root {
       --orange: #FF4D00;
@@ -47,7 +55,9 @@
       --white: #FFFFFF;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--orange);
@@ -84,7 +94,7 @@
       padding: 10px 28px;
       display: flex;
       gap: 28px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
     .nav-pill a {
@@ -100,7 +110,10 @@
       border-radius: 9999px;
     }
 
-    .nav-pill a:hover { background: var(--white); color: var(--black); }
+    .nav-pill a:hover {
+      background: var(--white);
+      color: var(--black);
+    }
 
     /* ── SÃO JOÃO · BANDEIRINHAS ─────────────────────────── */
     .bunting {
@@ -116,7 +129,9 @@
       border-top: none;
     }
 
-    .bunting.divider { margin: 0; }
+    .bunting.divider {
+      margin: 0;
+    }
 
     .bunting i {
       width: 40px;
@@ -125,13 +140,29 @@
       clip-path: polygon(0 0, 100% 0, 50% 100%);
     }
 
-    .bunting i:nth-child(5n+1) { background: #E63946; }
-    .bunting i:nth-child(5n+2) { background: #FFD23F; }
-    .bunting i:nth-child(5n+3) { background: #2A9D8F; }
-    .bunting i:nth-child(5n+4) { background: #3A86FF; }
-    .bunting i:nth-child(5n+5) { background: #F72585; }
+    .bunting i:nth-child(5n+1) {
+      background: #E63946;
+    }
 
-    section[id] { scroll-margin-top: 20px; }
+    .bunting i:nth-child(5n+2) {
+      background: #FFD23F;
+    }
+
+    .bunting i:nth-child(5n+3) {
+      background: #2A9D8F;
+    }
+
+    .bunting i:nth-child(5n+4) {
+      background: #3A86FF;
+    }
+
+    .bunting i:nth-child(5n+5) {
+      background: #F72585;
+    }
+
+    section[id] {
+      scroll-margin-top: 20px;
+    }
 
     /* ── HERO BADGE (São João) ───────────────────────────── */
     .hero-badge {
@@ -151,7 +182,7 @@
       margin-bottom: 22px;
       position: relative;
       z-index: 2;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
       max-width: 100%;
       text-align: center;
     }
@@ -220,7 +251,7 @@
       gap: 22px;
       position: relative;
       z-index: 2;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.28);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
     }
 
     .hero-offer-label {
@@ -249,7 +280,7 @@
       text-transform: uppercase;
       letter-spacing: -0.02em;
       color: var(--white);
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 10px;
       padding: 10px 14px;
     }
@@ -275,7 +306,7 @@
       justify-content: center;
       gap: 14px;
       padding-top: 22px;
-      border-top: 2px solid rgba(255,255,255,0.12);
+      border-top: 2px solid rgba(255, 255, 255, 0.12);
     }
 
     .hero-offer-price-left {
@@ -290,7 +321,7 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255, 255, 255, 0.45);
       text-decoration: line-through;
       margin-bottom: 4px;
     }
@@ -330,7 +361,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255, 255, 255, 0.5);
       margin-top: -6px;
     }
 
@@ -344,11 +375,14 @@
       border: 2px solid var(--black);
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
       background: #000;
     }
 
-    .vsl-player vturb-smartplayer { display: block; width: 100%; }
+    .vsl-player vturb-smartplayer {
+      display: block;
+      width: 100%;
+    }
 
     .hero-divider {
       width: 100%;
@@ -390,7 +424,15 @@
       height: 24px;
     }
 
-    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     /* ── SHAME SECTION ───────────────────────────────────── */
     .shame-section {
@@ -403,7 +445,7 @@
     }
 
     .shame-left {
-      border-right: 1px solid rgba(255,255,255,0.15);
+      border-right: 1px solid rgba(255, 255, 255, 0.15);
       padding-right: 64px;
     }
 
@@ -439,7 +481,7 @@
       font-family: 'Inter', sans-serif;
       font-size: 16px;
       line-height: 1.7;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       max-width: 440px;
     }
 
@@ -452,27 +494,27 @@
     .ba-card {
       display: flex;
       flex-direction: row-reverse;
-      border: 2px solid rgba(255,255,255,0.1);
+      border: 2px solid rgba(255, 255, 255, 0.1);
       background: var(--black);
       position: relative;
       overflow: hidden;
       align-items: center;
     }
-    
+
     .ba-card-img {
       width: 250px;
       height: 250px;
       flex-shrink: 0;
-      border-left: 1px solid rgba(255,255,255,0.1);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .ba-card-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
-    
+
     .ba-card-content {
       padding: 32px;
       flex: 1;
@@ -486,7 +528,7 @@
     .ba-label {
       font-family: 'Space Mono', monospace;
       font-size: 14px;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       text-transform: uppercase;
       letter-spacing: -0.02em;
     }
@@ -500,10 +542,15 @@
       letter-spacing: -0.04em;
     }
 
-    .ba-card.after { border-color: var(--orange); }
-    .ba-card.after .ba-label { color: var(--orange); }
+    .ba-card.after {
+      border-color: var(--orange);
+    }
 
-    
+    .ba-card.after .ba-label {
+      color: var(--orange);
+    }
+
+
 
     /* ── MARQUEE ─────────────────────────────────────────── */
     .marquee-section {
@@ -544,8 +591,13 @@
       padding-right: 60px;
     }
 
-    .marquee-item.orange { color: var(--orange); }
-    .marquee-item.white-fade { color: rgba(255,255,255,0.8); }
+    .marquee-item.orange {
+      color: var(--orange);
+    }
+
+    .marquee-item.white-fade {
+      color: rgba(255, 255, 255, 0.8);
+    }
 
     .marquee-sep {
       color: var(--orange);
@@ -553,13 +605,23 @@
     }
 
     @keyframes marquee-left {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
     }
 
     @keyframes marquee-right {
-      from { transform: translateX(-50%); }
-      to { transform: translateX(0); }
+      from {
+        transform: translateX(-50%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
     }
 
     /* ── SERVICES / MODULES ──────────────────────────────── */
@@ -573,7 +635,7 @@
       justify-content: space-between;
       align-items: flex-end;
       padding-bottom: 28px;
-      border-bottom: 2px solid rgba(255,255,255,0.2);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
       margin-bottom: 0;
     }
 
@@ -592,11 +654,11 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255, 255, 255, 0.4);
     }
 
     .service-item {
-      border-bottom: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .service-summary {
@@ -610,8 +672,13 @@
       position: relative;
     }
 
-    .service-summary::-webkit-details-marker { display: none; }
-    .service-summary:hover { background: rgba(255,255,255,0.04); }
+    .service-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .service-summary:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
 
     .service-item[open] .service-summary {
       padding-bottom: 16px;
@@ -625,7 +692,9 @@
       letter-spacing: -0.02em;
     }
 
-    .service-content { flex: 1; }
+    .service-content {
+      flex: 1;
+    }
 
     .service-title {
       font-family: 'Archivo Black', sans-serif;
@@ -638,7 +707,9 @@
       display: block;
     }
 
-    .service-summary:hover .service-title { transform: translateX(16px); }
+    .service-summary:hover .service-title {
+      transform: translateX(16px);
+    }
 
     .service-tags {
       display: flex;
@@ -653,8 +724,8 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.5);
-      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 4px 12px;
       border-radius: 9999px;
     }
@@ -672,7 +743,7 @@
       opacity: 1;
       transform: rotate(45deg);
     }
-    
+
     .service-lessons-grid {
       display: flex;
       flex-direction: column;
@@ -682,16 +753,23 @@
     }
 
     @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .lesson-card {
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       overflow: hidden;
       transition: border-color 0.3s, transform 0.3s;
@@ -706,7 +784,7 @@
       width: 200px;
       height: 200px;
       object-fit: cover;
-      border-left: 1px solid rgba(255,255,255,0.1);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .lesson-title {
@@ -760,7 +838,9 @@
       transition: filter 0.4s;
     }
 
-    .expert-photo-wrap:hover .expert-photo { filter: grayscale(0%) contrast(1); }
+    .expert-photo-wrap:hover .expert-photo {
+      filter: grayscale(0%) contrast(1);
+    }
 
     .expert-badge {
       position: absolute;
@@ -818,7 +898,9 @@
       transition: transform 0.2s;
     }
 
-    .expert-handle:hover { transform: translateX(4px); }
+    .expert-handle:hover {
+      transform: translateX(4px);
+    }
 
     .expert-bio {
       font-family: 'Inter', sans-serif;
@@ -890,13 +972,16 @@
       color: var(--white);
     }
 
-    .students-title em { font-style: normal; color: var(--orange); }
+    .students-title em {
+      font-style: normal;
+      color: var(--orange);
+    }
 
     .students-sub {
       font-family: 'Inter', sans-serif;
       font-size: 16px;
       line-height: 1.6;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       max-width: 560px;
       margin: 18px auto 0;
     }
@@ -918,7 +1003,9 @@
       scrollbar-width: none;
     }
 
-    .students-carousel::-webkit-scrollbar { display: none; }
+    .students-carousel::-webkit-scrollbar {
+      display: none;
+    }
 
     .students-carousel .student-card {
       flex: 0 0 auto;
@@ -929,7 +1016,7 @@
     .student-card {
       position: relative;
       aspect-ratio: 9 / 16;
-      border: 2px solid rgba(255,255,255,0.15);
+      border: 2px solid rgba(255, 255, 255, 0.15);
       border-radius: 14px;
       overflow: hidden;
       background: #111;
@@ -937,7 +1024,10 @@
       transition: border-color 0.25s, transform 0.25s;
     }
 
-    .student-card:hover { border-color: var(--orange); transform: translateY(-4px); }
+    .student-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-4px);
+    }
 
     .student-card img,
     .student-card video,
@@ -952,8 +1042,13 @@
     }
 
     /* card com vídeo incorporado: caption não bloqueia o player */
-    .student-card.has-video::after { display: none; }
-    .student-card.has-video .student-caption { pointer-events: none; }
+    .student-card.has-video::after {
+      display: none;
+    }
+
+    .student-card.has-video .student-caption {
+      pointer-events: none;
+    }
 
     /* zoom uniforme no player para cortar TODAS as bordas onde o YouTube
        desenha título, logo, marca-d'água e botões — fica como vídeo nativo.
@@ -973,7 +1068,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(120% 80% at 50% 0%, rgba(255,77,0,0.35), transparent 60%),
+        radial-gradient(120% 80% at 50% 0%, rgba(255, 77, 0, 0.35), transparent 60%),
         repeating-linear-gradient(135deg, #161616 0 14px, #1d1d1d 14px 28px);
     }
 
@@ -981,7 +1076,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 45%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 45%);
       pointer-events: none;
     }
 
@@ -1001,8 +1096,14 @@
       transition: transform 0.25s;
     }
 
-    .student-card:hover .student-play { transform: translate(-50%, -50%) scale(1.12); }
-    .student-play svg { color: var(--black); margin-left: 3px; }
+    .student-card:hover .student-play {
+      transform: translate(-50%, -50%) scale(1.12);
+    }
+
+    .student-play svg {
+      color: var(--black);
+      margin-left: 3px;
+    }
 
     .student-caption {
       position: absolute;
@@ -1104,7 +1205,7 @@
       font-size: 16px;
       font-weight: 700;
       letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255, 255, 255, 0.45);
       text-decoration: line-through;
     }
 
@@ -1132,8 +1233,16 @@
       color: var(--white);
     }
 
-    .cta-pricebox-price .cur { font-size: 0.42em; color: var(--orange); align-self: flex-start; margin-top: 0.1em; }
-    .cta-pricebox-price .cents { font-size: 0.5em; }
+    .cta-pricebox-price .cur {
+      font-size: 0.42em;
+      color: var(--orange);
+      align-self: flex-start;
+      margin-top: 0.1em;
+    }
+
+    .cta-pricebox-price .cents {
+      font-size: 0.5em;
+    }
 
     .cta-pricebox-note {
       font-family: 'Space Mono', monospace;
@@ -1141,7 +1250,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255, 255, 255, 0.55);
       margin-top: 16px;
     }
 
@@ -1165,11 +1274,16 @@
 
     .cta-btn:hover {
       transform: scale(1.06);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
     }
 
-    .cta-btn svg { transition: transform 0.3s; }
-    .cta-btn:hover svg { transform: translateX(6px); }
+    .cta-btn svg {
+      transition: transform 0.3s;
+    }
+
+    .cta-btn:hover svg {
+      transform: translateX(6px);
+    }
 
     .cta-guarantee {
       margin-top: 20px;
@@ -1178,7 +1292,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      color: rgba(0,0,0,0.5);
+      color: rgba(0, 0, 0, 0.5);
     }
 
     .cta-deliverables {
@@ -1211,7 +1325,7 @@
 
     .cta-card {
       position: relative;
-      background: rgba(0,0,0,0.04);
+      background: rgba(0, 0, 0, 0.04);
       border: 2px solid var(--black);
       padding: 14px 14px;
       display: flex;
@@ -1242,7 +1356,9 @@
       color: var(--black);
     }
 
-    .cta-card-body { flex: 1; }
+    .cta-card-body {
+      flex: 1;
+    }
 
     .cta-card-title {
       font-family: 'Inter', sans-serif;
@@ -1253,9 +1369,14 @@
       transition: color 0.25s;
     }
 
-    .cta-card:hover .cta-card-title { color: var(--white); }
+    .cta-card:hover .cta-card-title {
+      color: var(--white);
+    }
 
-    .cta-card.featured { border-color: var(--black); background: var(--orange); }
+    .cta-card.featured {
+      border-color: var(--black);
+      background: var(--orange);
+    }
 
     .cta-card.featured::before {
       content: "PRINCIPAL";
@@ -1314,7 +1435,7 @@
     }
 
     .faq-item {
-      border-bottom: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .faq-item summary {
@@ -1333,8 +1454,13 @@
       transition: color 0.25s;
     }
 
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary:hover { color: var(--orange); }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary:hover {
+      color: var(--orange);
+    }
 
     .faq-icon {
       flex-shrink: 0;
@@ -1357,18 +1483,31 @@
       transition: background 0.25s;
     }
 
-    .faq-icon::before { width: 14px; height: 2.5px; }
-    .faq-icon::after { width: 2.5px; height: 14px; }
+    .faq-icon::before {
+      width: 14px;
+      height: 2.5px;
+    }
 
-    .faq-item[open] .faq-icon { background: var(--orange); transform: rotate(135deg); }
+    .faq-icon::after {
+      width: 2.5px;
+      height: 14px;
+    }
+
+    .faq-item[open] .faq-icon {
+      background: var(--orange);
+      transform: rotate(135deg);
+    }
+
     .faq-item[open] .faq-icon::before,
-    .faq-item[open] .faq-icon::after { background: var(--black); }
+    .faq-item[open] .faq-icon::after {
+      background: var(--black);
+    }
 
     .faq-answer {
       font-family: 'Inter', sans-serif;
       font-size: 15px;
       line-height: 1.7;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       max-width: 680px;
       padding: 0 0 28px;
     }
@@ -1382,7 +1521,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: -0.02em;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
     }
 
     .faq-cta a {
@@ -1426,39 +1565,123 @@
       transition: opacity 0.2s;
     }
 
-    .footer-links a:hover { opacity: 0.5; }
+    .footer-links a:hover {
+      opacity: 0.5;
+    }
 
     /* ── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 768px) {
-      .nav-pill { display: none; }
-      .shame-section { grid-template-columns: 1fr; }
-      .shame-left { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 48px; }
-      .expert-section { grid-template-columns: 1fr; gap: 48px; }
-      .expert-stats { gap: 24px; }
-      .before-after { gap: 16px; }
-      .ba-card { flex-direction: row-reverse; text-align: left; }
-      .ba-card-img { width: 140px; height: 140px; border-left: 1px solid rgba(255,255,255,0.1); }
-      .ba-card-content { padding: 16px; align-items: flex-start; }
-      .ba-title { font-size: 24px; }
-      .cta-deliverables-grid { grid-template-columns: 1fr; }
-      .hero-meta { grid-template-columns: 1fr; gap: 24px; text-align: center; }
-      .hero-meta-right { text-align: center; }
-      .scroll-indicator { margin: 0 auto; }
-      .service-summary { grid-template-columns: 48px 1fr auto; }
-      .service-lessons-grid { padding: 0 0 32px 0; }
-      .lesson-img { width: 140px; height: 140px; }
-      .lesson-title { padding: 16px; gap: 2px; }
-      .lesson-number { font-size: 12px; }
-      .lesson-name { font-size: 20px; }
-      footer { flex-direction: column; gap: 16px; text-align: center; }
-      .footer-links { justify-content: center; }
+      .nav-pill {
+        display: none;
+      }
+
+      .shame-section {
+        grid-template-columns: 1fr;
+      }
+
+      .shame-left {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 48px;
+      }
+
+      .expert-section {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .expert-stats {
+        gap: 24px;
+      }
+
+      .before-after {
+        gap: 16px;
+      }
+
+      .ba-card {
+        flex-direction: row-reverse;
+        text-align: left;
+      }
+
+      .ba-card-img {
+        width: 140px;
+        height: 140px;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .ba-card-content {
+        padding: 16px;
+        align-items: flex-start;
+      }
+
+      .ba-title {
+        font-size: 24px;
+      }
+
+      .cta-deliverables-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .hero-meta-right {
+        text-align: center;
+      }
+
+      .scroll-indicator {
+        margin: 0 auto;
+      }
+
+      .service-summary {
+        grid-template-columns: 48px 1fr auto;
+      }
+
+      .service-lessons-grid {
+        padding: 0 0 32px 0;
+      }
+
+      .lesson-img {
+        width: 140px;
+        height: 140px;
+      }
+
+      .lesson-title {
+        padding: 16px;
+        gap: 2px;
+      }
+
+      .lesson-number {
+        font-size: 12px;
+      }
+
+      .lesson-name {
+        font-size: 20px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- SÃO JOÃO · BANDEIRINHAS (topo, rola com a página) -->
-  <div class="bunting top-strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="bunting top-strip" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
 
   <!-- NAVIGATION -->
   <nav>
@@ -1483,7 +1706,8 @@
     </h1>
 
     <div class="vsl-player">
-      <vturb-smartplayer id="vid-6a2f744d66b98f0059f9346a" style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
+      <vturb-smartplayer id="vid-6a2f744d66b98f0059f9346a"
+        style="display: block; margin: 0 auto; width: 100%;"></vturb-smartplayer>
     </div>
     <script type="text/javascript">
       var s = document.createElement("script");
@@ -1512,9 +1736,10 @@
       </div>
       <a href="#cta" class="cta-btn hero-cta-btn">
         Quero entrar no forró
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="5" x2="12" y2="19"/>
-          <polyline points="19 12 12 19 5 12"/>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <polyline points="19 12 12 19 5 12" />
         </svg>
       </a>
       <span class="hero-offer-note">Pagamento único · PIX ou cartão</span>
@@ -1527,12 +1752,13 @@
     <div class="shame-left">
       <div class="shame-tag">O Problema</div>
       <h2 class="shame-heading">
-        Ela dança colada<br/>com <em>outro</em>.<br/>
-        Você<br/>assiste.
+        Ela dança colada<br />com <em>outro</em>.<br />
+        Você<br />assiste.
       </h2>
       <p class="shame-body">
-        Você foi no arraiá, no bar, na festa junina. A música tocou e você ficou parado. Não por falta de vontade, por falta de jeito. Enquanto isso, ela foi embora no braço de um cara que sabia o que estava fazendo.
-        <br/><br/>
+        Você foi no São João, no bar, na festa junina. A música tocou e você ficou parado. Não por falta de vontade, por
+        falta de jeito. Enquanto isso, ela foi embora no braço de um cara que sabia o que estava fazendo.
+        <br /><br />
         Isso não precisa acontecer de novo. Nunca mais.
       </p>
     </div>
@@ -1542,14 +1768,14 @@
         <img src="antes.png" class="ba-card-img" alt="Antes" />
         <div class="ba-card-content">
           <div class="ba-label">Antes</div>
-          <div class="ba-title">Encostado<br/>na parede</div>
+          <div class="ba-title">Encostado<br />na parede</div>
         </div>
       </div>
       <div class="ba-card after">
         <img src="depois.png" class="ba-card-img" alt="Depois" />
         <div class="ba-card-content">
           <div class="ba-label">Depois</div>
-          <div class="ba-title">Conduzindo<br/>com confiança</div>
+          <div class="ba-title">Conduzindo<br />com confiança</div>
         </div>
       </div>
     </div>
@@ -1632,9 +1858,10 @@
             <span class="service-tag">Ritmo</span>
           </div>
         </div>
-        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="12" y1="5" x2="12" y2="19"/>
-          <line x1="5" y1="12" x2="19" y2="12"/>
+        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </summary>
       <div class="service-lessons-grid">
@@ -1673,9 +1900,10 @@
             <span class="service-tag">Liderança</span>
           </div>
         </div>
-        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="12" y1="5" x2="12" y2="19"/>
-          <line x1="5" y1="12" x2="19" y2="12"/>
+        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </summary>
       <div class="service-lessons-grid">
@@ -1714,9 +1942,10 @@
             <span class="service-tag">Virada</span>
           </div>
         </div>
-        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="12" y1="5" x2="12" y2="19"/>
-          <line x1="5" y1="12" x2="19" y2="12"/>
+        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </summary>
       <div class="service-lessons-grid">
@@ -1755,9 +1984,10 @@
             <span class="service-tag">Improviso</span>
           </div>
         </div>
-        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="12" y1="5" x2="12" y2="19"/>
-          <line x1="5" y1="12" x2="19" y2="12"/>
+        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </summary>
       <div class="service-lessons-grid">
@@ -1796,9 +2026,10 @@
             <span class="service-tag">Social</span>
           </div>
         </div>
-        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="12" y1="5" x2="12" y2="19"/>
-          <line x1="5" y1="12" x2="19" y2="12"/>
+        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </summary>
       <div class="service-lessons-grid">
@@ -1837,9 +2068,10 @@
             <span class="service-tag">Salão</span>
           </div>
         </div>
-        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <line x1="12" y1="5" x2="12" y2="19"/>
-          <line x1="5" y1="12" x2="19" y2="12"/>
+        <svg class="service-arrow" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </summary>
       <div class="service-lessons-grid">
@@ -1876,12 +2108,12 @@
     </div>
     <div class="expert-info">
       <div class="expert-label">Quem vai te ensinar</div>
-      <h2 class="expert-name">Téo<br/>Albuquerque</h2>
+      <h2 class="expert-name">Téo<br />Albuquerque</h2>
       <a class="expert-handle" href="https://instagram.com/teo.arrastape" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="2" y="2" width="20" height="20" rx="5"/>
-          <circle cx="12" cy="12" r="4"/>
-          <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+          <rect x="2" y="2" width="20" height="20" rx="5" />
+          <circle cx="12" cy="12" r="4" />
+          <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
         </svg>
         @teo.arrastape
       </a>
@@ -1894,15 +2126,15 @@
       <div class="expert-stats">
         <div>
           <div class="expert-stat-num">12+</div>
-          <div class="expert-stat-label">Anos<br/>ensinando</div>
+          <div class="expert-stat-label">Anos<br />ensinando</div>
         </div>
         <div>
           <div class="expert-stat-num">1.2k</div>
-          <div class="expert-stat-label">Alunos<br/>formados</div>
+          <div class="expert-stat-label">Alunos<br />formados</div>
         </div>
         <div>
           <div class="expert-stat-num">85k</div>
-          <div class="expert-stat-label">Seguidores<br/>no Instagram</div>
+          <div class="expert-stat-label">Seguidores<br />no Instagram</div>
         </div>
       </div>
     </div>
@@ -1913,34 +2145,43 @@
     <div class="students-header">
       <span class="students-label">Prova Real</span>
       <h2 class="students-title">Nossos alunos depois de <em>1 semana</em> de curso</h2>
-      <p class="students-sub">Gente que começou travada na parede e hoje está no meio do salão. Dá o play e vê a transformação.</p>
+      <p class="students-sub">Gente que começou travada na parede e hoje está no meio do salão. Dá o play e vê a
+        transformação.</p>
     </div>
 
     <div class="students-carousel-wrap">
       <div class="students-carousel" id="studentsCarousel">
         <div class="student-card has-video">
-          <iframe src="https://www.youtube-nocookie.com/embed/-6KsUHIlSBg?autoplay=1&mute=1&loop=1&playlist=-6KsUHIlSBg&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1" title="Aluno dançando forró" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/-6KsUHIlSBg?autoplay=1&mute=1&loop=1&playlist=-6KsUHIlSBg&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1"
+            title="Aluno dançando forró" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
         </div>
 
         <div class="student-card has-video">
-          <iframe src="https://www.youtube-nocookie.com/embed/Ewhg8RBE5fA?autoplay=1&mute=1&loop=1&playlist=Ewhg8RBE5fA&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1" title="Aluno dançando forró" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Ewhg8RBE5fA?autoplay=1&mute=1&loop=1&playlist=Ewhg8RBE5fA&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1"
+            title="Aluno dançando forró" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
         </div>
 
         <div class="student-card has-video">
-          <iframe src="https://www.youtube-nocookie.com/embed/CTkebk53uBw?autoplay=1&mute=1&loop=1&playlist=CTkebk53uBw&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1" title="Aluno dançando forró" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/CTkebk53uBw?autoplay=1&mute=1&loop=1&playlist=CTkebk53uBw&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1"
+            title="Aluno dançando forró" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SÃO JOÃO · BANDEIRINHAS (divisória) -->
-  <div class="bunting divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="bunting divider" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
 
   <!-- CTA -->
   <section class="cta-section" id="cta">
-    <div class="cta-eyebrow">Arraiá 2026 · Oferta de São João · Vagas Limitadas</div>
+    <div class="cta-eyebrow">São João 2026 · Oferta de São João · Vagas Limitadas</div>
     <h2 class="cta-heading">
-      ENTRE<br/>
+      ENTRE<br />
       <span>NO FORRÓ</span>
     </h2>
 
@@ -1948,25 +2189,37 @@
       <h3 class="cta-deliverables-title">O que você leva hoje:</h3>
       <div class="cta-deliverables-grid">
         <div class="cta-card featured">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Curso Completo "Entre no Forró" com 06 módulos práticos</div>
           </div>
         </div>
         <div class="cta-card">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Acesso Vitalício para assistir quando e onde quiser</div>
           </div>
         </div>
         <div class="cta-card">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Suporte tira-dúvidas direto com o professor</div>
           </div>
         </div>
         <div class="cta-card">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Atualizações futuras do curso de graça, pra sempre</div>
           </div>
@@ -1976,37 +2229,55 @@
       <h3 class="cta-deliverables-title cta-bonus-heading">+ Bônus exclusivos</h3>
       <div class="cta-deliverables-grid">
         <div class="cta-card bonus">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Guia da Abordagem Certa para chamar pra dançar sem levar fora</div>
           </div>
         </div>
         <div class="cta-card bonus">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Playlist Secreta "Arrasta-pé" pra treinar o ritmo em casa</div>
           </div>
         </div>
         <div class="cta-card bonus">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Comunidade VIP de Alunos pra tirar dúvidas e marcar festas</div>
           </div>
         </div>
         <div class="cta-card bonus">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Aula Bônus: passos avançados pra virar atração da festa</div>
           </div>
         </div>
         <div class="cta-card bonus">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Agenda de Forrós e eventos perto de você</div>
           </div>
         </div>
         <div class="cta-card bonus">
-          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <svg class="cta-card-check" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
           <div class="cta-card-body">
             <div class="cta-card-title">Checklist Anti-Travada pra não congelar no salão</div>
           </div>
@@ -2024,11 +2295,13 @@
       <div class="cta-pricebox-note">Pagamento único · PIX ou cartão</div>
     </div>
 
-    <a href="https://ggcheckout.app/checkout/v5/AlUgaaWRBGJDrwCq9slf" class="cta-btn" onclick="if(window.fbq)fbq('track','InitiateCheckout');">
+    <a href="https://ggcheckout.app/checkout/v5/AlUgaaWRBGJDrwCq9slf" class="cta-btn"
+      onclick="if(window.fbq)fbq('track','InitiateCheckout');">
       Quero Aprender Forró Agora
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="5" y1="12" x2="19" y2="12"/>
-        <polyline points="12 5 19 12 12 19"/>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12" />
+        <polyline points="12 5 19 12 12 19" />
       </svg>
     </a>
 
@@ -2039,47 +2312,57 @@
   <section class="faq-section" id="faq">
     <div class="faq-header">
       <span class="faq-label">Dúvidas Frequentes</span>
-      <h2 class="faq-title">Ainda na dúvida?<br/>A gente responde.</h2>
+      <h2 class="faq-title">Ainda na dúvida?<br />A gente responde.</h2>
     </div>
 
     <div class="faq-list">
       <details class="faq-item" name="faq" open>
         <summary>Nunca dancei nada na vida. Vou conseguir?<span class="faq-icon"></span></summary>
-        <p class="faq-answer">Vai. O curso começa do absoluto zero, no passo básico, e evolui no seu ritmo. A maioria dos alunos chegou exatamente assim: travado, sem noção nenhuma, com vergonha. Em poucos dias já estavam dançando o forró pé de serra com confiança.</p>
+        <p class="faq-answer">Vai. O curso começa do absoluto zero, no passo básico, e evolui no seu ritmo. A maioria
+          dos alunos chegou exatamente assim: travado, sem noção nenhuma, com vergonha. Em poucos dias já estavam
+          dançando o forró pé de serra com confiança.</p>
       </details>
 
       <details class="faq-item" name="faq">
         <summary>Quanto tempo leva pra eu sair dançando?<span class="faq-icon"></span></summary>
-        <p class="faq-answer">Com cerca de 15 minutos por dia, em mais ou menos 1 semana você já solta os primeiros passos e a condução básica. Para chegar ao salão mandando bem na próxima festa, a média dos alunos é de 3 semanas.</p>
+        <p class="faq-answer">Com cerca de 15 minutos por dia, em mais ou menos 1 semana você já solta os primeiros
+          passos e a condução básica. Para chegar ao salão mandando bem na próxima festa, a média dos alunos é de 3
+          semanas.</p>
       </details>
 
       <details class="faq-item" name="faq">
         <summary>Preciso de um par pra treinar?<span class="faq-icon"></span></summary>
-        <p class="faq-answer">Não. Todas as aulas são pensadas para você treinar sozinho em casa, na frente do espelho. A condução, o abraço e os giros são ensinados de um jeito que você assimila o movimento antes mesmo de dançar com alguém.</p>
+        <p class="faq-answer">Não. Todas as aulas são pensadas para você treinar sozinho em casa, na frente do espelho.
+          A condução, o abraço e os giros são ensinados de um jeito que você assimila o movimento antes mesmo de dançar
+          com alguém.</p>
       </details>
 
       <details class="faq-item" name="faq">
         <summary>Como funciona o acesso ao curso?<span class="faq-icon"></span></summary>
-        <p class="faq-answer">É 100% online e o acesso é vitalício. Você assiste quando e onde quiser, pelo celular, tablet ou computador, quantas vezes precisar. Os bônus e as atualizações futuras já ficam liberados na sua área de aluno.</p>
+        <p class="faq-answer">É 100% online e o acesso é vitalício. Você assiste quando e onde quiser, pelo celular,
+          tablet ou computador, quantas vezes precisar. Os bônus e as atualizações futuras já ficam liberados na sua
+          área de aluno.</p>
       </details>
 
       <details class="faq-item" name="faq">
         <summary>E se eu não gostar?<span class="faq-icon"></span></summary>
-        <p class="faq-answer">Você tem 7 dias de garantia incondicional. Entrou, assistiu e sentiu que não é pra você? É só pedir o reembolso dentro desse prazo e devolvemos 100% do valor, sem perguntas e sem burocracia.</p>
+        <p class="faq-answer">Você tem 7 dias de garantia incondicional. Entrou, assistiu e sentiu que não é pra você? É
+          só pedir o reembolso dentro desse prazo e devolvemos 100% do valor, sem perguntas e sem burocracia.</p>
       </details>
 
       <details class="faq-item" name="faq">
         <summary>O pagamento é seguro? Tem parcelamento?<span class="faq-icon"></span></summary>
-        <p class="faq-answer">Sim. O pagamento é processado em ambiente seguro e você pode pagar no PIX ou no cartão, com a opção de parcelar. Assim que o pagamento é confirmado, o acesso cai na hora no seu e-mail.</p>
+        <p class="faq-answer">Sim. O pagamento é processado em ambiente seguro e você pode pagar no PIX ou no cartão,
+          com a opção de parcelar. Assim que o pagamento é confirmado, o acesso cai na hora no seu e-mail.</p>
       </details>
     </div>
 
-    <p class="faq-cta">Ficou alguma dúvida? <a href="#cta">Garanta sua vaga no arraiá</a></p>
+    <p class="faq-cta"> <a href="#cta">Garanta sua vaga no São João</a></p>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-copy">© 2026 Forró Sem Parede · Especial São João · Todos os direitos reservados</div>
+    <div class="footer-copy">© 2026 Entre no Forró · Especial São João · Todos os direitos reservados</div>
     <div class="footer-links">
       <a href="#">Contato</a>
       <a href="#">Privacidade</a>
@@ -2142,4 +2425,5 @@
   </script>
 
 </body>
+
 </html>
