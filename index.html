@@ -1054,6 +1054,13 @@
        desenha título, logo, marca-d'água e botões — fica como vídeo nativo.
        O clique chega ao player (play/pause); os elementos do YouTube ficam
        fora da área visível por causa do recorte. */
+    .student-card.has-video .yt-mount {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
     .student-card.has-video iframe {
       position: absolute;
       inset: 0;
@@ -1062,6 +1069,48 @@
       transform: scale(1.35);
       transform-origin: center center;
     }
+
+    /* controles customizados: apenas play/pause e som/mudo */
+    .video-controls {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .vc-btn {
+      pointer-events: auto;
+      width: 38px;
+      height: 38px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.55);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, color 0.2s;
+    }
+
+    .vc-btn:hover {
+      background: var(--orange);
+      color: var(--black);
+      transform: scale(1.08);
+    }
+
+    .vc-btn .ic { display: none; }
+    .vc-play:not(.playing) .ic-play { display: block; }
+    .vc-play.playing .ic-pause { display: block; }
+    .vc-mute:not(.muted) .ic-sound { display: block; }
+    .vc-mute.muted .ic-muted { display: block; }
 
     /* placeholder enquanto não há vídeo real */
     .student-card .student-placeholder {
@@ -1294,6 +1343,242 @@
       letter-spacing: -0.02em;
       color: rgba(0, 0, 0, 0.5);
     }
+
+    /* ── POPUP DE OFERTA (upsell) ────────────────────────── */
+    .offer-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      overflow-y: auto;
+    }
+
+    .offer-modal.open { display: flex; }
+
+    .offer-card {
+      position: relative;
+      width: 100%;
+      max-width: 460px;
+      background: var(--black);
+      border-radius: 22px;
+      padding: 32px 26px 26px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      animation: offerPop 0.25s ease;
+    }
+
+    @keyframes offerPop {
+      from { transform: translateY(16px) scale(0.97); opacity: 0; }
+      to { transform: none; opacity: 1; }
+    }
+
+    .offer-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .offer-close:hover { background: var(--orange); color: var(--black); }
+
+    .offer-eyebrow {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--black);
+      background: var(--orange);
+      padding: 5px 12px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+
+    .offer-title {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: clamp(22px, 6vw, 30px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .offer-title em { font-style: normal; color: var(--orange); }
+
+    .offer-sub {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 14px;
+    }
+
+    .offer-tier {
+      position: relative;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .offer-tier:hover { border-color: rgba(255, 255, 255, 0.45); }
+
+    .offer-tier.selected {
+      border-color: var(--orange);
+      background: rgba(255, 77, 0, 0.10);
+    }
+
+    .offer-radio {
+      position: relative;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .offer-tier.selected .offer-radio { border-color: var(--orange); background: var(--orange); }
+
+    .offer-tier.selected .offer-radio::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--black);
+      transform: translate(-50%, -50%);
+    }
+
+    .offer-tier-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .offer-tier-name {
+      flex: 1;
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 14px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .offer-tier.complete .offer-tier-name { color: var(--orange); }
+
+    .offer-tier-price {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .offer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .offer-list li {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      line-height: 1.35;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .offer-list li::before {
+      content: "✓";
+      color: var(--orange);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .offer-list li.bonus::before { content: "🎁"; }
+
+    .offer-tier-tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      background: var(--orange);
+      padding: 3px 8px;
+      border-radius: 9999px;
+    }
+
+    .offer-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      text-decoration: none;
+      text-align: center;
+      font-family: 'Archivo Black', sans-serif;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .offer-btn-primary {
+      margin-top: 6px;
+      background: var(--orange);
+      color: var(--black);
+      font-size: clamp(14px, 4vw, 17px);
+      padding: 17px 20px;
+      box-shadow: 0 10px 30px rgba(255, 77, 0, 0.35);
+    }
+
+    .offer-btn-primary:hover { transform: scale(1.03); }
+
+    .offer-btn-secondary {
+      margin-top: 12px;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      padding: 6px;
+    }
+
+    .offer-btn-secondary:hover { color: var(--white); }
 
     .cta-deliverables {
       max-width: 760px;
@@ -1730,9 +2015,9 @@
       <div class="hero-offer-price">
         <div class="hero-offer-price-left">
           <span class="hero-offer-old">De R$127,90</span>
-          <span class="hero-offer-now">R$19,90</span>
+          <span class="hero-offer-now">R$9,90</span>
         </div>
-        <span class="hero-offer-save">84% OFF</span>
+        <span class="hero-offer-save">92% OFF</span>
       </div>
       <a href="#cta" class="cta-btn hero-cta-btn">
         Quero entrar no forró
@@ -2289,21 +2574,20 @@
       <span class="cta-pricebox-badge">Acesso vitalício · Oferta de São João</span>
       <div class="cta-pricebox-from">
         <span class="cta-pricebox-old">De R$127,90</span>
-        <span class="cta-pricebox-save">84% OFF</span>
+        <span class="cta-pricebox-save">92% OFF</span>
       </div>
-      <span class="cta-pricebox-price"><span class="cur">R$</span>19<span class="cents">,90</span></span>
+      <span class="cta-pricebox-price"><span class="cur">R$</span>9<span class="cents">,90</span></span>
       <div class="cta-pricebox-note">Pagamento único · PIX ou cartão</div>
     </div>
 
-    <a href="https://ggcheckout.app/checkout/v5/AlUgaaWRBGJDrwCq9slf" class="cta-btn"
-      onclick="if(window.fbq)fbq('track','InitiateCheckout');">
+    <button type="button" class="cta-btn" onclick="openOfferModal()">
       Quero Aprender Forró Agora
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
         stroke-linecap="round" stroke-linejoin="round">
         <line x1="5" y1="12" x2="19" y2="12" />
         <polyline points="12 5 19 12 12 19" />
       </svg>
-    </a>
+    </button>
 
     <div class="cta-guarantee">★ Garantia de 7 dias · Se não gostar, dinheiro de volta ★</div>
   </section>
@@ -2423,6 +2707,93 @@
         });
     })();
   </script>
+
+  <!-- POPUP DE OFERTA (upsell ao clicar no CTA principal) -->
+  <div class="offer-modal" id="offerModal" onclick="if(event.target===this)closeOfferModal()">
+    <div class="offer-card" role="dialog" aria-modal="true" aria-label="Escolha sua oferta">
+      <button class="offer-close" type="button" aria-label="Fechar" onclick="closeOfferModal()">×</button>
+      <h3 class="offer-title">Leve a versão <em>completa</em> com os bônus</h3>
+
+      <p class="offer-sub">Escolha o seu plano:</p>
+
+      <div class="offer-tier" data-plan="essencial" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('essencial')">
+        <div class="offer-tier-head">
+          <span class="offer-radio"></span>
+          <span class="offer-tier-name">Essencial</span>
+          <span class="offer-tier-price">R$9,90</span>
+        </div>
+        <ul class="offer-list">
+          <li>Curso completo — 6 módulos práticos</li>
+          <li>Acesso vitalício</li>
+          <li>Suporte tira-dúvidas</li>
+          <li>Atualizações futuras</li>
+        </ul>
+      </div>
+
+      <div class="offer-tier complete" data-plan="complete" role="radio" aria-checked="true" tabindex="0" onclick="selectPlan('complete')">
+        <span class="offer-tier-tag">Mais escolhido · só R$10 a mais</span>
+        <div class="offer-tier-head">
+          <span class="offer-radio"></span>
+          <span class="offer-tier-name">Completo + Bônus</span>
+          <span class="offer-tier-price">R$19,90</span>
+        </div>
+        <ul class="offer-list">
+          <li>Tudo do Essencial, e ainda os 6 bônus:</li>
+          <li class="bonus">Guia da Abordagem Certa</li>
+          <li class="bonus">Playlist Secreta "Arrasta-pé"</li>
+          <li class="bonus">Comunidade VIP de Alunos</li>
+          <li class="bonus">Aula Bônus: passos avançados</li>
+          <li class="bonus">Agenda de Forrós e eventos</li>
+          <li class="bonus">Checklist Anti-Travada</li>
+        </ul>
+      </div>
+
+      <button type="button" id="offerContinueBtn" class="offer-btn offer-btn-primary" onclick="continueCheckout()">
+        Continuar com o plano Completo
+      </button>
+    </div>
+  </div>
+
+  <!-- Lógica do popup de oferta -->
+  <script>
+    // ⚠️ Configure os dois links de checkout (cada um com o preço certo no ggcheckout):
+    var CHECKOUT_COMPLETO = 'https://ggcheckout.app/checkout/v5/AlUgaaWRBGJDrwCq9slf'; // R$19,90 (completo + bônus)
+    var CHECKOUT_ESSENCIAL = 'https://ggcheckout.app/checkout/v5/0F1HmqzSluVECbhfVA8c'; // R$9,90 (apenas essencial)
+
+    var selectedPlan = 'complete';
+
+    function selectPlan(plan) {
+      selectedPlan = plan;
+      document.querySelectorAll('.offer-tier').forEach(function (t) {
+        var on = t.getAttribute('data-plan') === plan;
+        t.classList.toggle('selected', on);
+        t.setAttribute('aria-checked', on ? 'true' : 'false');
+      });
+      var btn = document.getElementById('offerContinueBtn');
+      if (btn) btn.textContent = (plan === 'complete' ? 'Continuar com o plano Completo' : 'Continuar com o plano Essencial');
+    }
+
+    function openOfferModal() {
+      selectPlan('complete'); // sugere o plano completo por padrão
+      document.getElementById('offerModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeOfferModal() {
+      document.getElementById('offerModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function continueCheckout() {
+      if (selectedPlan === 'complete') {
+        if (window.fbq) fbq('track', 'InitiateCheckout', { value: 19.90, currency: 'BRL' });
+        window.location.href = CHECKOUT_COMPLETO;
+      } else {
+        if (window.fbq) fbq('track', 'InitiateCheckout', { value: 9.90, currency: 'BRL' });
+        window.location.href = CHECKOUT_ESSENCIAL;
+      }
+    }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeOfferModal(); });
+  </script>
+
 
 </body>
 
