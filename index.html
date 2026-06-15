@@ -955,16 +955,10 @@
     .student-card.has-video::after { display: none; }
     .student-card.has-video .student-caption { pointer-events: none; }
 
-    /* camada que esconde/bloqueia os ícones e cliques do YouTube */
-    .student-shield {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      background: transparent;
-    }
-
     /* zoom uniforme no player para cortar TODAS as bordas onde o YouTube
-       desenha título, logo, marca-d'água e botões — fica como vídeo nativo */
+       desenha título, logo, marca-d'água e botões — fica como vídeo nativo.
+       O clique chega ao player (play/pause); os elementos do YouTube ficam
+       fora da área visível por causa do recorte. */
     .student-card.has-video iframe {
       position: absolute;
       inset: 0;
@@ -972,7 +966,6 @@
       height: 100%;
       transform: scale(1.35);
       transform-origin: center center;
-      pointer-events: none;
     }
 
     /* placeholder enquanto não há vídeo real */
@@ -1927,17 +1920,14 @@
       <div class="students-carousel" id="studentsCarousel">
         <div class="student-card has-video">
           <iframe src="https://www.youtube-nocookie.com/embed/-6KsUHIlSBg?autoplay=1&mute=1&loop=1&playlist=-6KsUHIlSBg&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1" title="Aluno dançando forró" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
-          <div class="student-shield"></div>
         </div>
 
         <div class="student-card has-video">
           <iframe src="https://www.youtube-nocookie.com/embed/Ewhg8RBE5fA?autoplay=1&mute=1&loop=1&playlist=Ewhg8RBE5fA&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1" title="Aluno dançando forró" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
-          <div class="student-shield"></div>
         </div>
 
         <div class="student-card has-video">
           <iframe src="https://www.youtube-nocookie.com/embed/CTkebk53uBw?autoplay=1&mute=1&loop=1&playlist=CTkebk53uBw&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&fs=0&disablekb=1" title="Aluno dançando forró" allow="autoplay; encrypted-media; picture-in-picture" loading="lazy"></iframe>
-          <div class="student-shield"></div>
         </div>
       </div>
     </div>
