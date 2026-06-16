@@ -2786,13 +2786,19 @@
       document.getElementById('offerModal').classList.remove('open');
       document.body.style.overflow = '';
     }
+    // encaminha os UTMs (e demais parâmetros) da URL atual para o checkout
+    function withUtms(url) {
+      var qs = window.location.search;
+      if (!qs || qs.length < 2) return url;
+      return url + (url.indexOf('?') === -1 ? '?' : '&') + qs.substring(1);
+    }
     function continueCheckout() {
       if (selectedPlan === 'complete') {
         if (window.fbq) fbq('track', 'InitiateCheckout', { value: 19.90, currency: 'BRL' });
-        window.location.href = CHECKOUT_COMPLETO;
+        window.location.href = withUtms(CHECKOUT_COMPLETO);
       } else {
         if (window.fbq) fbq('track', 'InitiateCheckout', { value: 9.90, currency: 'BRL' });
-        window.location.href = CHECKOUT_ESSENCIAL;
+        window.location.href = withUtms(CHECKOUT_ESSENCIAL);
       }
     }
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeOfferModal(); });
