@@ -2720,7 +2720,7 @@
 
       <p class="offer-sub">Escolha o seu plano:</p>
 
-      <div class="offer-tier" data-plan="essencial" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('essencial')">
+      <div class="offer-tier" data-plan="essencial" role="radio" aria-checked="true" tabindex="0" onclick="selectPlan('essencial')">
         <div class="offer-tier-head">
           <span class="offer-radio"></span>
           <span class="offer-tier-name">Essencial</span>
@@ -2734,7 +2734,7 @@
         </ul>
       </div>
 
-      <div class="offer-tier complete" data-plan="complete" role="radio" aria-checked="true" tabindex="0" onclick="selectPlan('complete')">
+      <div class="offer-tier complete" data-plan="complete" role="radio" aria-checked="false" tabindex="0" onclick="selectPlan('complete')">
         <span class="offer-tier-tag">Mais escolhido · só R$10 a mais</span>
         <div class="offer-tier-head">
           <span class="offer-radio"></span>
@@ -2753,7 +2753,7 @@
       </div>
 
       <button type="button" id="offerContinueBtn" class="offer-btn offer-btn-primary" onclick="continueCheckout()">
-        Continuar com o plano Completo
+        Continuar com o plano Essencial
       </button>
     </div>
   </div>
@@ -2764,7 +2764,7 @@
     var CHECKOUT_COMPLETO = 'https://pay.lowify.com.br/checkout?product_id=f7nKVr'; // R$19,90 (completo + bônus)
     var CHECKOUT_ESSENCIAL = 'https://pay.lowify.com.br/checkout?product_id=hS1hpT'; // R$9,90 (apenas essencial)
 
-    var selectedPlan = 'complete';
+    var selectedPlan = 'essencial';
 
     function selectPlan(plan) {
       selectedPlan = plan;
@@ -2778,7 +2778,7 @@
     }
 
     function openOfferModal() {
-      selectPlan('complete'); // sugere o plano completo por padrão
+      selectPlan('essencial'); // pré-seleciona o plano essencial (R$9,90) por padrão
       document.getElementById('offerModal').classList.add('open');
       document.body.style.overflow = 'hidden';
     }
